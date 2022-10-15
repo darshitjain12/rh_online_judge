@@ -1,0 +1,31 @@
+<html lang="en">
+<%- include("./partials/head.ejs") %>
+<body>
+    <%- include("./partials/nav.ejs") %>
+    <h1>Submit your response for <%= problem.title %></h1>
+    <form>
+        <div class="file is-primary">
+            <label class="file-label">
+              <input class="file-input" id="file" type="file" name="resume">
+              <span class="file-cta">
+                <span class="file-icon">
+                  <i class="fas fa-upload"></i>
+                </span>
+                <span class="file-label" id="filename">
+                  Choose a file…
+                </span>
+              </span>
+            </label>
+        </div>
+        <script>
+            let file = document.getElementById('file');
+            file.onchange = ()=>{
+                if(file.files.length){
+                (document.getElementById('filename')).innerHTML = file.files[0].name;
+                }
+            }
+        </script>
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>

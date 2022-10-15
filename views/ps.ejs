@@ -1,0 +1,17 @@
+<html lang="en">
+<%- include("./partials/head.ejs") %>
+<body>
+    <%- include("./partials/nav.ejs") %>
+    <h1><%= problem.title %></h1>
+    <h6>Memory limit: <%= problem.memory_limit%></h6>
+    <h6>Time limit: <%= problem.time_limit%></h6>
+    <br>
+    <p><%= problem.problem_statement %></p>
+    <h5>Sample Input</h5>
+    <p><%= problem.sample_input %></p>
+    <h5>Sample Output</h5>
+    <p><%= problem.sample_output %></p>
+    <a href="/problem/submit/<%= problem._id %>"><button>Submit Problem</button></a>
+    <%- include("./partials/footer.ejs") %>
+</body>
+</html>
